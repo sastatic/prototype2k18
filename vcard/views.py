@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets, filters
+from .Serializers import MVCardSerializer
+from .models import MVCard
 
-# Create your views here.
+
+class MVCardViewSet(viewsets.ModelViewSet):
+    queryset = MVCard.objects.all()
+    serializer_class = MVCardSerializer
